@@ -1,0 +1,25 @@
+h1 {
+  position: absolute;
+  right: 40%;
+}
+
+#octopus {
+position: absolute;
+right: 50%;
+top: 30%;
+z-index: 0;
+}
+
+#hat {
+position: absolute;
+right: 47%;
+top: 20%;
+z-index: 1;
+}
+
+#glasses {
+position: absolute;
+right: 53%;
+top: 45%;
+z-index: 1;
+}
