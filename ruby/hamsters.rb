@@ -1,4 +1,4 @@
-hamster_age = ""
+hamster_age = nil
 
 puts "Hamster's Name?"
 hamster_name = gets.chomp.capitalize
