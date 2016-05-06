@@ -1,0 +1,26 @@
+4.2 Algorithms
+Forrest Wortham
+
+Release0: “Equip Your New Robot”
+	⁃	Enter elevator.
+	⁃	Ask Master for Masters_Floor.
+	⁃	If Masters_Floor = Elevator_Button, then True, else False
+	⁃	Start at Elevator_Button = 1
+	⁃	Elevator_Button = previous Elevator_Button + 1 While Masters_Floor == Elevator_Button is False.
+	⁃	Until Masters_Floor == Elevator_Button is True.
+	⁃	Press Elevator_Button
+
+
+
+Release1: “Forrest’s Netflix and Chill Algorithm”
+	⁃	Open Netflix
+	⁃	Ask imaginary date for Request
+	⁃	Request = nil
+	⁃	If Request == nil is True, then browse Recommended_Sec
+	⁃	Else play Request
+	⁃	Start at Recommended_Sec = Movie1
+	⁃	While Movie1_Rating < 4, then MovieN_Rating =  previous Movie + 1
+	⁃	Until MovieN_Rating >= 4
+	⁃	Play MovieN
+	⁃	While MovieN = playing, User = Crying
+	⁃	Until Sleep mode
