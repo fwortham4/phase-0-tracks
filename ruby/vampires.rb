@@ -1,5 +1,5 @@
 puts "What Is your name?"
-name = gets.chomp.downcase
+name = gets.chomp.downcase.to_s
 
 puts "How old are you?"
 age = gets.chomp.to_i
@@ -19,4 +19,20 @@ health_insurance = gets.chomp.downcase
 if health_insurance == "yes"
   health_insurance = true
 else health_insurance = false
+end
+
+if age<=100 && (garlic == true || health_insurance == true) == true
+  puts "Probably NOT a vampire."
+end
+
+if age>100 && (garlic == true || health_insurance == false) == true
+  puts "Probably a vampire."
+end
+
+if age>100 && (garlic == false && health_insurance == false) == true
+  puts "Almost certainly a vampire."
+end
+
+if name = "drake cula" || "tu fang" == true
+  puts "Definitely a vampire."
 end
