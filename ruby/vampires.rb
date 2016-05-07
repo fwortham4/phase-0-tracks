@@ -1,3 +1,8 @@
+puts "How many employees will be processed?"
+new_employees = gets.chomp.to_i
+
+def vampire_employees(new_employees)
+
 puts "What Is your name?"
 name = gets.chomp.downcase.to_s
 
@@ -37,9 +42,14 @@ elsif age>100 && (garlic == true || health_insurance == false) == true
   puts "Probably a vampire."
 elsif age>100 && (garlic == false && health_insurance == false) == true
   puts "Almost certainly a vampire."
-elsif case name
+else puts "Result are inconclusive."
+end
+
+case name
   when 'drake cula','tu fang'
     puts "Definitely a vampire!!!"
     end
-else puts "Result are inconclusive."
+
 end
+
+new_employees.times {vampire_employees(new_employees)}
