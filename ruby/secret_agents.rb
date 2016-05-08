@@ -1,12 +1,3 @@
-puts "Agent, would you like to encrypt or decrypt a message?"
-answer = gets.chomp.downcase
-if answer = 'encrypt'
-  encrypt("x marks the spot")
-elsif answer = 'decrypt'
-  decrypt("txpsegjti")
-else "Your Answer is not valid."
-end
-
 #Encryption Method
 
 #encrypts the users input
@@ -52,3 +43,12 @@ decrypt("bcd")
 
 # the nested method does NOT work for me because the result from the Encryption method returns a nil at the end.
 #decrypt(encrypt("swordfish"))
+
+#puts "Agent, would you like to encrypt or decrypt a message?"
+#answer = gets.chomp.downcase
+#if answer = 'encrypt'
+  #encrypt("x marks the spot")
+#elsif answer = 'decrypt'
+ #decrypt("txpsegjti")
+#else "Your Answer is not valid."
+#end
