@@ -47,8 +47,8 @@ def decrypt(input2)
 end
 
 #calls both methods
-#encrypt("ab c")
-#decrypt("bcd")
+encrypt("ab c")
+decrypt("bcd")
 
 # the nested method does NOT work for me because the result from the Encryption method returns a nil at the end.
 #decrypt(encrypt("swordfish"))
