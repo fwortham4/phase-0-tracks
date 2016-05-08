@@ -30,11 +30,25 @@ case health_insurance
     health_insurance = false
 end
 
+def allergies
+puts "List your allergies. (type done when done listing or if you have none)."
+
+while allergies = [gets.chomp.downcase.to_s]
+  case allergies_break
+    when'sunshine','mirrors','pointy wood'
+      puts "Definitely a vampire!!!"
+    when'done'
+      break if'done'
+    end
+  else loop do
+end
+
 puts "Name: #{name}"
 puts "Age: #{age}"
 puts "Birth Location: #{birth_location}"
 puts "Garlic?: #{garlic}"
 puts "Health Insurance?: #{health_insurance}"
+puts "Allergies: #{allergies}"
 
 if age<=100 && (garlic == true || health_insurance == true) == true
   puts "Probably NOT a vampire."
