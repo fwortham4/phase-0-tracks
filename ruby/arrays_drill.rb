@@ -1,3 +1,16 @@
+def add_to_array(a,b)
+  a.push(b)
+end
+
+add_to_array([],"a")
+
+
+def build_array(a,b,c)
+  [a,b,c]
+end
+
+build_array(1,"two", nil)
+
 chicago = []
 p chicago
 
