@@ -29,3 +29,15 @@ p dish
 p primary_colors
 primary_colors.map! {|x| p x.upcase}
 p primary_colors
+
+letter_array = ["a", "b", "c", "d"]
+letter_array.delete_if {|x| x=="a"}
+
+letter_array = ["a", "b", "c", "d"]
+letter_array.keep_if {|x| x=="a"}
+
+letter_array = ["a", "b", "c", "d"]
+letter_array.reject! {|x| x=="a"}
+
+letter_array = ["a", "b", "c", "d"]
+letter_array.take_while {|x| x=="a"}
