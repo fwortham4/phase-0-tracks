@@ -2,37 +2,55 @@
 #by Forrest Wortham
 #
 
-tn_sports = {
-  football:{
-      teams: 'titans',
-      position: [
-        qb: 3,
-        rb: 5,
-        ol: 9,
-        wr: 11
-      ]
+basketball = {
+  grizzlies:{
+    city: 'memphis',
+    position: [
+        pg: 'mike',
+        c: 'marc',
+        sf: 'barnes',
+        pf: 'zbo',
+        sg: 'tony'
+        ],
+      established: 2001
     },
 
-  basketball:{
-      teams: 'grizzlies',
-    position: [
-        pg: 3,
-        c: 2,
-        sf: 4,
-        pf: 3,
-        sg: 2
-      ]
+  bulls:{
+    city: 'chicago',
+    position: {
+        pg: 'd-rose',
+        c: 'soft gasol',
+        sf: 'butler',
+        pf: 'billy',
+        sg: 'sarah',
+        },
+    established: 1960
   },
 
-  hockey: {
-      teams: 'predators',
-    position: [
-        lw: 3,
-        rw: 4,
-        goalie: 2
-        ]
+  warriors: {
+    city: 'oakland',
+    position: {
+        pg: 'stephanie',
+        c: 'bogus',
+        sf: 'barnes',
+        pf: 'dremond',
+        sg: 'thompson'
+        },
+    established: 1985
   }
 
 }
 
-p tn_sports
+# prints out the hash
+p basketball
+
+# prints out positions on the grizzlies basketball team.
+p basketball[:grizzlies][:position]
+
+#prints the year the bulls basketball team was established.
+p basketball[:bulls][:established]
+
+#prints who the PF is for the Warriors.
+p basketball[:warriors][:position][:pf]
+
+basketball[:grizzlies][:position].store(sf, 'kd')

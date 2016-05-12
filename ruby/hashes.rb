@@ -1,77 +1,57 @@
-#5.3 Symbols and Hashes
+#5.5 Nested Data Structures
 #by Forrest Wortham
 
-#Initial interior designer hash.
-interior_designer = {
-  client_name: "John Doe",
-  age: 30,
-  number_of_children: nil,
-  number_of_bdrooms: 3,
-  number_of_barooms: 2,
-  pets: true,
-  decor_theme: "nautical",
+basketball = {
+  grizzlies:{
+    city: 'memphis',
+    position: {
+        pg: 'mike',
+        c: 'marc',
+        sf: 'barnes',
+        pf: 'zbo',
+        sg: 'tony'
+        },
+      established: 2001
+    },
+
+  bulls:{
+    city: 'chicago',
+    position: {
+        pg: 'd-rose',
+        c: 'soft gasol',
+        sf: 'butler',
+        pf: 'billy',
+        sg: 'sarah',
+        },
+    established: 1960
+  },
+
+  warriors: {
+    city: 'oakland',
+    position: {
+        pg: 'stephanie',
+        c: 'bogus',
+        sf: 'barnes',
+        pf: 'dremond',
+        sg: 'thompson'
+        },
+    established: 1985
+  }
+
 }
 
-puts "What is the new client's name?"
-input_client_name = gets.chomp.to_s.upcase
-interior_designer[:client_name] = input_client_name
+# prints out the hash
+p basketball
 
-puts "how old is the #{input_client_name}?"
-input_age = gets.chomp.to_i
-interior_designer[:age] = input_age
+# prints out positions on the grizzlies basketball team.
+p basketball[:grizzlies][:position]
 
-puts "How many children does #{input_client_name} have?"
-input_children = gets.chomp.to_i
-interior_designer[:number_of_children] = input_children
+#prints the year the bulls basketball team was established.
+p basketball[:bulls][:established]
 
-puts "How many bedrooms does #{input_client_name}'s home have?"
-input_bdrooms = gets.chomp.to_i
-interior_designer[:number_of_bdrooms] =input_bdrooms
+#prints who the PF is for the Warriors.
+p basketball[:warriors][:position][:pf]
 
-puts "How many bathrooms does #{input_client_name}'s home have?"
-input_barooms = gets.chomp.to_i
-interior_designer[:number_of_barooms] =input_barooms
-
-puts "Does #{input_client_name} have any pets?"
-input_pets = gets.chomp.downcase
-case input_pets
-  when 'y','yes'
-    input_pets = true
-  when 'n','no'
-    input_pets = false
-end
-interior_designer[:pets] = input_pets
-
-puts "What kind of decor theme would #{input_client_name} like to have?"
-input_decor = gets.chomp.to_s
-interior_designer[:decor_theme] =input_decor
-
-#prints out revised hash.
-p interior_designer
-
-#Opportunity for user change an input value by calling a key.
-puts "Would you like to correct a KEY-VALUE Pair? (type none if none)."
-answer = gets.chomp.downcase
-case answer
-  when 'y','yes'
-    answer = true
-  when 'none'
-    answer = false
-end
-if answer == true
-# finds key.
-puts "What KEY would you like to change?"
-x = gets.chomp.to_s
-# changes value.
-puts "What VALUE would you like to change?"
-y = gets.chomp
-else answer == false
-  puts "No changes have been made."
-end
-
-#executes correct
-interior_designer.store(x,y)
-
-# prints out revised hash.
-p interior_designer
-
+#Changes the SF position for the Grizzlies from barnes to durantula
+basketball[:grizzlies][:position].store(:sf, 'durantula')
+p basketball[:grizzlies][:position]
