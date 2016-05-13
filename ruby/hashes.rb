@@ -74,4 +74,3 @@ interior_designer.store(x,y)
 
 # prints out revised hash.
 p interior_designer
-
