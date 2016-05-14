@@ -8,6 +8,14 @@ full_name = gets.chomp.downcase
 
 #splits full name into array["first", "last"]
 #.rotate inverts the first and last name within the array.
-reverse_name = full_name.split(' ').rotate
+reverse_name = full_name.split(' ').rotate.join(' ')
 
-p reverse_name
+vowels = 'aeiou'
+consonant = 'bcdfghjklmnpqrstvwxyz'
+index = 0
+
+reverse_name.chars
+
+puts reverse_name
+
+#reverse_name.chars.map!{|consonant| consonant.next}.join('')
