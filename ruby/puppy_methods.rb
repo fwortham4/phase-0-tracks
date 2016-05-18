@@ -1,5 +1,9 @@
 class Puppy
 
+def initialize
+   puts "Initializing new puppy instance ..."
+  end
+
   def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
@@ -23,9 +27,11 @@ class Puppy
 
 end
 
+puts "This is where our driver code beigns."
 spot = Puppy.new
 spot.fetch("ball")
 spot.speak(3)
 spot.roll_over
 spot.dog_years(5)
 spot.chase_cars("red")
+
