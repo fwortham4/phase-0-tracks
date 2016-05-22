@@ -1,7 +1,7 @@
 # 6.5 Modules - Release1
 # by Forrest Wortham
 
-# Release: 1
+# Release: 1 - Stand Alone
 ############ Module ############
 # module Shout
 
@@ -18,7 +18,7 @@
 # p Shout.yell_angrily("I hate you")
 # p Shout.yelling_happily("I love you")
 
-# Release: 3
+# Release: 3 - Mixin
 ############ Module ############
 module Shout
 
