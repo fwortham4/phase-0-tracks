@@ -5,7 +5,7 @@
 
 class Santa
 
-attr_reader :age, :ethnicity, :reindeer_ranking
+attr_reader :age, :ethnicity, :reindeer_ranking, :weight, :origin
 attr_accessor :age, :gender
 
 # gender, ethnicity, weight, origin
@@ -16,7 +16,7 @@ def initialize(gender, ethnicity, weight, origin)
     @ethnicity = ethnicity
     @weight = weight
     @origin = origin
-    @age = 0
+    @age = rand(140)
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 end
 
@@ -60,27 +60,27 @@ end
 
 # Driver Code:
 
-10.times do santas_array[0].celebrate_birthday
-  end
-p santas_array[0].reindeer_ranking
-p santas_array[0].age
-  puts "Current reindeer ranking is #{santas_array[0].reindeer_ranking}"
-  santas_array[0].get_mad_at = "Vixen"
-  puts "Current reindeer ranking is #{santas_array[0].reindeer_ranking}"
-p santas_array[0].gender
-  santas_array[0].gender = "Male"
-p santas_array[0].gender
+# 10.times do santas_array[0].celebrate_birthday
+#   end
+# p santas_array[0].reindeer_ranking
+# p santas_array[0].age
+#   puts "Current reindeer ranking is #{santas_array[0].reindeer_ranking}"
+#   santas_array[0].get_mad_at = "Vixen"
+#   puts "Current reindeer ranking is #{santas_array[0].reindeer_ranking}"
+# p santas_array[0].gender
+#   santas_array[0].gender = "Male"
+# p santas_array[0].gender
+i = 1
+new_santas_array = []
+50.times do
+  new_santas_array << Santa.new(example_genders.sample, example_ethnicities.sample, example_weight.sample, example_origin.sample)
 
+  puts "There are now #{i} santas."
+  puts "Santa #:#{i} is a #{new_santas_array[i-1].gender} gender."
+  puts "Santa #:#{i} weighs #{new_santas_array[i-1].weight} lbs."
+  puts "Santa #:#{i} is #{new_santas_array[i-1].age} years old."
+  puts "Santa #:#{i} is #{new_santas_array[i-1].ethnicity}."
+  puts "Santa #:#{i} is from #{new_santas_array[i-1].origin}"
 
-
-
-# santas_array[0].celebrate_birthday
-# p santas_array
-
-# reindeer_ranking.get_mad_at("Vixen")
-# p reindeer_ranking
-
-# p santas_array
-
-
-
+  i += 1
+end
