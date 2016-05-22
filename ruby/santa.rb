@@ -5,9 +5,8 @@
 
 class Santa
 
-reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-
-age = 0
+attr_reader :age, :ethnicity, :reindeer_ranking
+attr_accessor :age, :gender
 
 # gender, ethnicity, weight, origin
 
@@ -17,6 +16,8 @@ def initialize(gender, ethnicity, weight, origin)
     @ethnicity = ethnicity
     @weight = weight
     @origin = origin
+    @age = 0
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 end
 
 santas = []
@@ -31,30 +32,15 @@ def eat_milk_and_cookies(cookie)
   end
 
 def celebrate_birthday
-  age += 1
+  @age = @age + 1
 end
 
-def get_mad_at(reindeer)
-  reindeer.rotate
-end
-
-# Setter Method
-def gender=(new_gender)
-  @gender = new_gender
-end
-
-# Getter Methods
-def age
-  @age
-end
-
-def ethnicity
-  @ethnicity
+def get_mad_at=(reindeer)
+  @reindeer_ranking.delete(reindeer)
+    @reindeer_ranking = @reindeer_ranking << reindeer
 end
 
 end
-
-puts "This is where the santa driver beigns."
 
 santas_array = []
 
@@ -67,9 +53,34 @@ example_genders.length.times do |i|
 
 # Adds attributes to santas in santas_array
 santas_array << Santa.new(example_genders[i], example_ethnicities[i], example_weight[i], example_origin[i])
+
+puts "There are #{santas_array.length} santas in the group!"
+
 end
 
-p santas_array
+# Driver Code:
+
+10.times do santas_array[0].celebrate_birthday
+  end
+p santas_array[0].reindeer_ranking
+p santas_array[0].age
+  puts "Current reindeer ranking is #{santas_array[0].reindeer_ranking}"
+  santas_array[0].get_mad_at = "Vixen"
+  puts "Current reindeer ranking is #{santas_array[0].reindeer_ranking}"
+p santas_array[0].gender
+  santas_array[0].gender = "Male"
+p santas_array[0].gender
+
+
+
+
+# santas_array[0].celebrate_birthday
+# p santas_array
+
+# reindeer_ranking.get_mad_at("Vixen")
+# p reindeer_ranking
+
+# p santas_array
 
 
 
