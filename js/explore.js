@@ -22,4 +22,4 @@ var result = reverse(string);
 
     // console.log(reverse_string);
 
-true||false
+console.log(true||false)
