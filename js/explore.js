@@ -11,12 +11,11 @@
 var string = "hello";
 
 function reverse(string) {
-  for(var i = 0; i<string.length; i++) {
-    var letter = string[i];
-    var array = [];
-    array.push(letter);
-    console.log(array);
+  var reverse_string = ""
+  for(i=string.length-1; i>-1; i--) {
+    reverse_string += string[i]
   }
+  console.log(reverse_string)
 }
 
 reverse(string);
