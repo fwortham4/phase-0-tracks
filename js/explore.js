@@ -11,13 +11,15 @@
 var string = "hello";
 
 function reverse(string) {
-  var reverse_string = ""
+  var reverse_string = "";
   for(i=string.length-1; i>-1; i--) {
-    reverse_string += string[i]
+    reverse_string += string[i];
   }
-  console.log(reverse_string)
+  console.log(reverse_string);
 }
 
-reverse(string);
+var result = reverse(string);
 
     // console.log(reverse_string);
+
+true||false
