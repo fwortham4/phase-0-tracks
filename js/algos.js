@@ -9,9 +9,15 @@
 
 /////////// Driver Code /////////////
 function longest_phrase(array) {
-  var element_length = []
-  for (i=0, i>array.length, i++) {
+  console.log(array.length)
+  var element_length = [];
+  for (i=0;i<array.length;i++) {
+    element_length.push(array[i].length);
 
   }
+  console.log(element_length);
 }
+
+var input_array = ["long phrase","longest phrase","longer phrase"]
+longest_phrase(input_array);
 
