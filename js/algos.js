@@ -12,10 +12,9 @@
 /////////////////////////////////////
 
 /////////// Method /////////////
-
 // 1.)
 function longest_phrase(array) {
-  console.log(array.length)
+  console.log(array.length);
   var element_length = [];
 
 // 2.)
@@ -27,11 +26,11 @@ function longest_phrase(array) {
 // 4.)
     var longest_string = Math.max(...element_length);
   }
-
+// 5.)
   var longest_phrase_index = element_length.indexOf(longest_string);
 
-// 5.)-7.)
-  console.log(array[longest_phrase_index])
+// 6.) and 7.)
+  console.log(array[longest_phrase_index]);
 }
 //////////////////////////////////////
 
@@ -39,6 +38,9 @@ function longest_phrase(array) {
 /////////// Driver Code /////////////
 
 longest_phrase(["long phrase","longest phrase","longer phrase"]);
-//////////////////////////////////////
 
-//  .findIndex(longest_phrase)
+longest_phrase(["I'm short","I'm defenitely the longest phrase in this array","I'm pretty long","I'm somewhat long","I'm not sure"]);
+
+longest_phrase(["short","short","short","short","short","short","short","longest phrase","short","short","short","short","short",]);
+
+//////////////////////////////////////
