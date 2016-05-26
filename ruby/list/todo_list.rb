@@ -25,3 +25,8 @@ end
 list1 = TodoList.new(["string1","string2"])
 p list1.get_items
 p list1.add_item("string3")
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> b765216663c06c4014303c758e23d0c7ccdb44c1
