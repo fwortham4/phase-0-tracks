@@ -11,8 +11,8 @@ var horse_names = ["Bubba", "Joker", "Lebron", "Princess"];
 blue_array.push("blue steel");
 horse_names.push("Zoolander");
 
-console.log(blue_array);
-console.log(horse_names);
+// DRIVER CODE: // console.log(blue_array);
+// DRIVER CODE: // console.log(horse_names);
 
 //////////////// Release1 ////////////////////
 // JS : "Objects" <-> Ruby : "Hashes"
@@ -25,7 +25,7 @@ for (var i=0;i<horse_names.length;i++) {
   blue_horses[horse_names[i]] = blue_array[i];
 };
 
-console.log(blue_horses);
+// DRIVER CODE: // console.log(blue_horses);
 
 //////////////// Release2 ////////////////////
 // Jave Script Obejects:
@@ -41,13 +41,25 @@ console.log(blue_horses);
 
 // Adding a new behavior -> Ex.) <object>.<newBehavior> = function() { <Code for new behavior>};
 
-function Car(brand, year, model, zeroTo60) {
+function Car(brand, year, model, zeroTo60, fwd) {
   this.brand = brand;
   this.year = year;
   this.model = model;
-  this zeroTo60 = zeroTo60;
+  this.zeroTo60 = zeroTo60;
+  this.fwd = fwd;
 
   this.zoom = function() {console.log("Zoom ZOOM!!!");};
 
   console.log("CAR INITIALIZATION COMPLETE");
 }
+
+// Porsche 911
+var porsche = new Car("Porsche", 2016, "911", 4.2, false);
+console.log(porsche);
+porsche.zoom();
+
+// Jeep Wrangler
+var jeep = new Car("Jeep", 2016, "Wrangler", 7.6, true);
+console.log(jeep);
+jeep.zoom();
+//////////////////////////////////////////////
