@@ -85,30 +85,30 @@ myReceiver(x, z);
 /////////// Method - Release2 /////////////
 
 function RandomString(words) {
+
   var array = [];
-  var result = ' ';
+  var result = '';
+  var letters = 'abcdefghijklmnopqrstuvwxyz';
   var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+
+// Iterates through n number of results.
   for (var n = words; n > 0; --n) {
-    for (var i = 10; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+// Selects a random chars 10 times to build a a single result word.
+    for (var i = 1; i > 0 && i < 11; --i) result += chars[Math.floor(Math.random() *letters.length)];
+    for (var i = 9; i > 0 && i < 11; --i) result += chars[Math.floor(Math.random() *chars.length)];
 
+// Prints out the result.
       console.log(result);
-      array.push(result)
-
+// Pushes the result to the array for storage.
+      array.push(result);
+// Resets result to be blank for next iteration.
+      var result = '';
   }
-  console.log(array);
 }
-
 
 ////////// Driver Code - Release2 ////////////
 
 RandomString(5);
-
-// function randomString(length, chars) {
-//     var result = '';
-//     for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
-//     return result;
-// }
-// var rString = randomString(32,
 
 //////////////////////////////////////////////
 
