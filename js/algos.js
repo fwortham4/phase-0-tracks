@@ -32,10 +32,8 @@ function longest_phrase(array) {
 // 6.) and 7.)
   console.log(array[longest_phrase_index]);
 }
-//////////////////////////////////////
 
-
-/////////// Driver Code /////////////
+////////// Driver Code - Release0 ////////////
 
 // longest_phrase(["long phrase","longest phrase","longer phrase"]);
 
@@ -66,9 +64,51 @@ function myReceiver(one, two) {
   console.log(one.name === two.name || one.number === two.number);
 }
 
-/////////// Driver Code /////////////
+////////// Driver Code - Release1 ////////////
 
 myReceiver(x, y);
 myReceiver(x, z);
 
 //////////////////////////////////////////////
+
+////////// Pseudo Coding - Release2 //////////
+// 1.) define function that takes an integer as an arguement.
+// 2.) Returns thats integer number of random strings.
+//      - of various lengths
+//      - Minimum: 1 letter
+//      - Maximum: 10 letters and
+// 3.) Call using driver code.
+// 4.)
+// 5.)
+/////////////////////////////////////////////
+
+/////////// Method - Release2 /////////////
+
+function RandomString(words) {
+  var array = [];
+  var result = ' ';
+  var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  for (var n = words; n > 0; --n) {
+    for (var i = 10; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+
+      console.log(result);
+      array.push(result)
+
+  }
+  console.log(array);
+}
+
+
+////////// Driver Code - Release2 ////////////
+
+RandomString(5);
+
+// function randomString(length, chars) {
+//     var result = '';
+//     for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+//     return result;
+// }
+// var rString = randomString(32,
+
+//////////////////////////////////////////////
+
