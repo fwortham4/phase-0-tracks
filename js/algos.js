@@ -49,33 +49,26 @@ function longest_phrase(array) {
 
 // 1.) Declasre 2 different Objects
 //      Ex.) {name: "String", age: Integer}
-// 2.) Define a function that receives a hash as input.
+// 2.) Define a function that receives 2 hashes as inputs.
 //    Return True if {"A", 10} and {"A", 23}
-//    Return False if {"", 10} and {"B", 23}
+//    Return False if {"A", 10} and {"B", 23}
 
-//////////////////////////////////////////////
+/////////////////////////////////////////////
 
 /////////// Method - Release1 /////////////
 
+var x = {'name': 'A', 'number': 10};
+var y = {'name': 'A','number': 23};
+var z = {'name': 'B', 'number': 45}
 
-var object1 = {name: 'A', number: 10};
-var object2 = {name: 'A',number: 23};
-
-function receiver(hash) {
-
-  for(i=[]; i>object1.length; i++) {
-    var key_name = name;
-    console.log(object1[key_name])
-    // for(i=0; i>object2.length; i++) {
-
-
-  }
+function myReceiver(one, two) {
+// function determines if at least one pair the key-values pairs match listed in Object one and Object two.
+  console.log(one.name === two.name || one.number === two.number);
 }
 
-console.log(receiver(object1));
-// console.log(object2[name]);
-//////////////////////////////////////////////
-
 /////////// Driver Code /////////////
+
+myReceiver(x, y);
+myReceiver(x, z);
 
 //////////////////////////////////////////////
