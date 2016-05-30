@@ -14,7 +14,7 @@
 /////////// Method - Release0 /////////////
 // 1.)
 function longest_phrase(array) {
-  console.log(array.length);
+  console.log("Your array has "+array.length + " elements in it.");
   var element_length = [];
 
 // 2.)
@@ -30,7 +30,7 @@ function longest_phrase(array) {
   var longest_phrase_index = element_length.indexOf(longest_string);
 
 // 6.) and 7.)
-  console.log(array[longest_phrase_index]);
+  console.log("The word in the array is: " +array[longest_phrase_index]);
 }
 
 ////////// Driver Code - Release0 ////////////
@@ -83,9 +83,10 @@ function myReceiver(one, two) {
 /////////////////////////////////////////////
 
 /////////// Method - Release2 /////////////
+var array = [];
+
 function RandomString(words) {
 
-  var array = [];
   var result = '';
   var letters = 'abcdefghijklmnopqrstuvwxyz';
   var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -109,11 +110,13 @@ function RandomString(words) {
 // Resets result to be blank for next iteration.
       var result = '';
   }
+  console.log(array);
 }
 
 ////////// Driver Code - Release2 ////////////
 
 RandomString(10);
+longest_phrase(array);
 
 
 //////////////////////////////////////////////
