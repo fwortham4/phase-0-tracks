@@ -3,7 +3,7 @@
 
 ///////// Pseudo Code ////////
 // 1.) create a variable that is a string.
-// 2.) create a function that receives a string as a parameter.
+// 2.) create a sublfunction that receives a string as a parameter.
 // 3.) separates the string into individual letters.
 // 4.) Reverse the letters
 // 5.) Returns a the new string in reverse order.

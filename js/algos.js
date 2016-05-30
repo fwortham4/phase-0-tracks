@@ -14,7 +14,7 @@
 /////////// Method - Release0 /////////////
 // 1.)
 function longest_phrase(array) {
-  console.log(array.length);
+  console.log("Your array has "+array.length + " elements in it.");
   var element_length = [];
 
 // 2.)
@@ -30,12 +30,10 @@ function longest_phrase(array) {
   var longest_phrase_index = element_length.indexOf(longest_string);
 
 // 6.) and 7.)
-  console.log(array[longest_phrase_index]);
+  console.log("The word in the array is: " +array[longest_phrase_index]);
 }
-//////////////////////////////////////
 
-
-/////////// Driver Code /////////////
+////////// Driver Code - Release0 ////////////
 
 // longest_phrase(["long phrase","longest phrase","longer phrase"]);
 
@@ -49,33 +47,76 @@ function longest_phrase(array) {
 
 // 1.) Declasre 2 different Objects
 //      Ex.) {name: "String", age: Integer}
-// 2.) Define a function that receives a hash as input.
+// 2.) Define a function that receives 2 hashes as inputs.
 //    Return True if {"A", 10} and {"A", 23}
-//    Return False if {"", 10} and {"B", 23}
+//    Return False if {"A", 10} and {"B", 23}
 
-//////////////////////////////////////////////
+/////////////////////////////////////////////
 
 /////////// Method - Release1 /////////////
 
+var x = {'name': 'A', 'number': 10};
+var y = {'name': 'A','number': 23};
+var z = {'name': 'B', 'number': 45}
 
-var object1 = {name: 'A', number: 10};
-var object2 = {name: 'A',number: 23};
-
-function receiver(hash) {
-
-  for(i=[]; i>object1.length; i++) {
-    var key_name = name;
-    console.log(object1[key_name])
-    // for(i=0; i>object2.length; i++) {
-
-
-  }
+function myReceiver(one, two) {
+// function determines if at least one pair the key-values pairs match listed in Object one and Object two.
+  console.log(one.name === two.name || one.number === two.number);
 }
 
-console.log(receiver(object1));
-// console.log(object2[name]);
+////////// Driver Code - Release1 ////////////
+
+// myReceiver(x, y);
+// myReceiver(x, z);
+
 //////////////////////////////////////////////
 
-/////////// Driver Code /////////////
+////////// Pseudo Coding - Release2 //////////
+// 1.) define function that takes an integer as an arguement.
+// 2.) Returns thats integer number of random strings.
+//      - of various lengths
+//      - Minimum: 1 letter
+//      - Maximum: 10 letters and
+// 3.) Call using driver code.
+// 4.)
+// 5.)
+/////////////////////////////////////////////
+
+/////////// Method - Release2 /////////////
+var array = [];
+
+function RandomString(words) {
+
+  var result = '';
+  var letters = 'abcdefghijklmnopqrstuvwxyz';
+  var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+
+// Iterates through n number of results.
+  for (var n = words; n > 0; --n) {
+
+// word_length generates a random number between 1 and 10 to determine the length of the "result"ing random word.
+  var word_length = Math.floor((Math.random() *10) +1);
+
+// Selects a random letter 1 times to make sure every word has at least 1 letter
+    for (var i = 1; i > 0 && i < 11; --i) result += chars[Math.floor(Math.random() *letters.length)];
+
+// Selects a random chars 9 times to build the remaining charcters in result word.
+    for (var i = word_length-1; i > 0 && i < 11; --i) result += chars[Math.floor(Math.random() *chars.length)];
+
+// Prints out the result.
+      console.log(result);
+// Pushes the result to the array for storage.
+      array.push(result);
+// Resets result to be blank for next iteration.
+      var result = '';
+  }
+  console.log(array);
+}
+
+////////// Driver Code - Release2 ////////////
+
+RandomString(10);
+longest_phrase(array);
+
 
 //////////////////////////////////////////////
