@@ -66,8 +66,8 @@ function myReceiver(one, two) {
 
 ////////// Driver Code - Release1 ////////////
 
-myReceiver(x, y);
-myReceiver(x, z);
+// myReceiver(x, y);
+// myReceiver(x, z);
 
 //////////////////////////////////////////////
 
@@ -83,7 +83,6 @@ myReceiver(x, z);
 /////////////////////////////////////////////
 
 /////////// Method - Release2 /////////////
-
 function RandomString(words) {
 
   var array = [];
@@ -93,9 +92,15 @@ function RandomString(words) {
 
 // Iterates through n number of results.
   for (var n = words; n > 0; --n) {
-// Selects a random chars 10 times to build a a single result word.
+
+// word_length generates a random number between 1 and 10 to determine the length of the "result"ing random word.
+  var word_length = Math.floor((Math.random() *10) +1);
+
+// Selects a random letter 1 times to make sure every word has at least 1 letter
     for (var i = 1; i > 0 && i < 11; --i) result += chars[Math.floor(Math.random() *letters.length)];
-    for (var i = 9; i > 0 && i < 11; --i) result += chars[Math.floor(Math.random() *chars.length)];
+
+// Selects a random chars 9 times to build the remaining charcters in result word.
+    for (var i = word_length-1; i > 0 && i < 11; --i) result += chars[Math.floor(Math.random() *chars.length)];
 
 // Prints out the result.
       console.log(result);
@@ -108,7 +113,7 @@ function RandomString(words) {
 
 ////////// Driver Code - Release2 ////////////
 
-RandomString(5);
+RandomString(10);
+
 
 //////////////////////////////////////////////
-
