@@ -1,0 +1,23 @@
+8.3 Solo Project - Queries
+by Forrest Wortham
+
+1.) Display the information in one table (either table is fine).
+
+SELECT * FROM free_agents;
+
+2.) Update an item that meets some condition (you can choose a condition that makes sense).
+
+UPDATE free_agents SET last_season_salary=20.0 WHERE lastname_firstname=“Conely_Mike”;
+
+3.) Display the information in both tables using one query.
+
+SELECT * FROM free_agents, teams WHERE free_agents.team_id = teams.id;
+
+4.) Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT free_agents.lastname_firstname, teams.team_name FROM free_agents JOIN teams ON free_agents.team_id = teams.id;
+
+5.) Delete an item that meets some condition (you can choose a condition that makes sense).
+
+DELETE FROM free_agents WHERE last_season_per<15.0;
+
