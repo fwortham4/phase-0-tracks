@@ -31,29 +31,32 @@ create_table_cmd = <<-SQL
     hillary BOOLEAN,
     bernie BOOLEAN,
     donald BOOLEAN,
-  )
+  );
 SQL
 
 # create a votes table (if it's not there already)
 db.execute(create_table_cmd)
 
 # add a test voter
-# db.execute("INSERT INTO votes (first_name, last_name, hillary, bernie, donald) VALUES ('John', 'Doe', true, false, false)")
+db.execute("INSERT INTO votes (first_name, last_name, hillary, bernie, donald) VALUES ('John', 'Doe', true, false, false)")
+
+puts votes.class
+p votes
 ###############################################
 
 ################### Method ####################
 # adds voters
 
-def voting(db, first_name, last_name, hillary, bernie, donald)
-  db.execute("INSERT INTO votes (first_name, last_name, hillary, bernie, donald) VALUES (?, ?, ?, ?, ?)", [first_name, last_name, hillary, bernie, donald])
-end
+# def voting(db, first_name, last_name, hillary, bernie, donald)
+#   db.execute("INSERT INTO votes (first_name, last_name, hillary, bernie, donald) VALUES (?, ?, ?, ?, ?)", [first_name, last_name, hillary, bernie, donald])
+# end
 
 
-################ Driver Code #################
-10.times do
-  voting(db, Faker::Name.first_name, Faker::Name.last_name, false, false, false)
-end
+# ################ Driver Code #################
+# 10.times do
+#   voting(db, Faker::Name.first_name, Faker::Name.last_name, false, false, false)
+# end
 
-puts votes.class
-p votes
-###############################################
+# puts votes.class
+# p votes
+# ###############################################
