@@ -26,37 +26,35 @@ db = SQLite3::Database.new("votes.db")
 create_table_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS votes(
     id INTEGER PRIMARY KEY,
-    first_name VARCHAR(255),
-    last_name VARCHAR(255),
-    hillary BOOLEAN,
-    bernie BOOLEAN,
-    donald BOOLEAN,
-  );
+    name VARCHAR(255),
+    hillary INT,
+    bernie INT,
+    donald INT
+  )
 SQL
 
 # create a votes table (if it's not there already)
 db.execute(create_table_cmd)
 
 # add a test voter
-db.execute("INSERT INTO votes (first_name, last_name, hillary, bernie, donald) VALUES ('John', 'Doe', true, false, false)")
-
-puts votes.class
-p votes
-###############################################
-
-################### Method ####################
-# adds voters
-
-# def voting(db, first_name, last_name, hillary, bernie, donald)
-#   db.execute("INSERT INTO votes (first_name, last_name, hillary, bernie, donald) VALUES (?, ?, ?, ?, ?)", [first_name, last_name, hillary, bernie, donald])
-# end
-
-
-# ################ Driver Code #################
-# 10.times do
-#   voting(db, Faker::Name.first_name, Faker::Name.last_name, false, false, false)
-# end
+# db.execute("INSERT INTO votes (name, hillary, bernie, donald) VALUES ('John Doe', 1, 0, 0)")
 
 # puts votes.class
 # p votes
-# ###############################################
+###############################################
+
+################### Method ####################
+# Adds voters to the database.
+
+def voting(db, name, hillary, bernie, donald)
+  db.execute("INSERT INTO votes (name, hillary, bernie, donald) VALUES (?, ?, ?, ?)", [name, hillary, bernie, donald])
+end
+###############################################
+
+################ Driver Code #################
+10.times do
+  count = Random.new
+  voting(db, Faker::Name.name, count.rand(2), count.rand(2), count.rand(2))
+end
+
+###############################################
