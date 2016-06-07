@@ -1,0 +1,53 @@
+8.3 Solo Project - Queries
+by Forrest Wortham
+
+Release2: Queries
+
+1.) Display the information in one table (either table is fine).
+
+SELECT * FROM free_agents;
+
+2.) Update an item that meets some condition (you can choose a condition that makes sense).
+
+UPDATE free_agents SET last_season_salary=20.0 WHERE lastname_firstname=“Conely_Mike”;
+
+3.) Display the information in both tables using one query.
+
+SELECT * FROM free_agents, teams WHERE free_agents.team_id = teams.id;
+
+4.) Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT free_agents.lastname_firstname, teams.team_name FROM free_agents JOIN teams ON free_agents.team_id = teams.id;
+
+5.) Delete an item that meets some condition (you can choose a condition that makes sense).
+
+DELETE FROM free_agents WHERE last_season_per<15.0;
+
+
+***Accidentally put “Barnes_Harrison” into table twice***
+
+
+Release3: Extra JOINS
+
+1.) Compares |Free Agent|Last Season Salary|Team|Salary Cap Space|
+
+QUERY:
+SELECT free_agents.lastname_firstname, free_agents.last_season_salary, teams.team_name, teams.salary_cap_space FROM free_agents JOIN teams ON free_agents.team_id = teams.id;
+
+RESULTS:
+Barnes_Harrison|3.9|Golden State Warriors|11
+Lin_Jeremy|2.1|Charlotte Hornets|39.8
+Conley_Mike|9.7|Memphis Grizzlies|38.1
+Barnes_Harrison|3.9|Golden State Warriors|11
+
+2.) Compares |Free Agent|Last Season PPG|Last Season PER|Team|
+
+QUERY:
+SELECT free_agents.lastname_firstname, free_agents.last_season_ppg, free_agents.last_season_per, teams.team_name FROM free_agents JOIN teams ON free_agents.team_id = teams.id;
+
+RESULTS:
+Barnes_Harrison|11.7|12.32|Golden State Warriors
+Lin_Jeremy|11.7|13.8|Charlotte Hornets
+Conley_Mike|15.3|19.45|Memphis Grizzlies
+Barnes_Harrison|11.7|12.32|Golden State Warriors
+

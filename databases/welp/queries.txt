@@ -1,0 +1,36 @@
+8.4 Mandatory Pairing: Many-to-Many Relationships
+by Forrest Wortham
+
+2.) You've joined two tables before. How do you join three?
+
+QUERY:
+SELECT * FROM businesses, users, reviews WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id;
+
+OUTPUT:
+1|Apple Inc.|AAPL|97.92|1|Forrest|Wortham|25|fwortham4|password1234|1|4|Apple stocks have been in decline recently. Sell, sell, SELL!!!|1|1
+1|Apple Inc.|AAPL|97.92|4|Billy|Williamson|19|billy789|54321|2|5|fwortham4 is stupid. Buy low Sell high!|1|4
+4|Microsoft Corp|MSFT|51.79|3|Sally|Sue|22|sally456|iforgot|3|5|Microsoft gear is effecient and cheap|4|3
+3|Amazon.com, Inc.|AMAZN|725.54|2|Jim|Bob|28|jb123|123456seven|4|1|Alexa doesn't understand me and is terrible.|3|2
+2|Alphabet Inc.|GOOGL|735.86|2|Jim|Bob|28|jb123|123456seven|5|5|Google is where it is at!|2|2
+
+3.) There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+QUERY:
+SELECT businesses.name, users.first_name, users.last_name, stars, comment FROM reviews JOIN businesses, users ON reviews.business_id = businesses.id AND reviews.user_id = users.id;
+
+OUTPUT:
+Apple Inc.|Forrest|Wortham|4|Apple stocks have been in decline recently. Sell, sell, SELL!!!
+Apple Inc.|Billy|Williamson|5|fwortham4 is stupid. Buy low Sell high!
+Microsoft Corp|Sally|Sue|5|Microsoft gear is effecient and cheap
+Amazon.com, Inc.|Jim|Bob|1|Alexa doesn't understand me and is terrible.
+Alphabet Inc.|Jim|Bob|5|Google is where it is at!
+
+
+4.) How do you view the data of all three tables for just one particular business?
+
+QUERY:(business_id = 3 is for Amazon.com, Inc.)
+SELECT * FROM businesses, users, reviews WHERE reviews.business_id = businesses.id AND businesses.id=3 AND reviews.user_id = users.id;
+
+OUTPUT:
+3|Amazon.com, Inc.|AMAZN|725.54|2|Jim|Bob|28|jb123|123456seven|4|1|Alexa doesn't understand me and is terrible.|3|2
+
