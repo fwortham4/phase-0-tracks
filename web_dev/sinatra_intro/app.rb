@@ -49,8 +49,9 @@ end
 ##############################################
 # 9.4 Building a Web Application in Ruby
 # by Forrest Wortham
+# RELEASE 0
 
-# Release1.1 - update with a "/contact" route that displays an address (you can make up the address).
+# Release0.1 - update with a "/contact" route that displays an address (you can make up the address).
 
 get '/contact/:address' do
   address = params[:address]
@@ -62,7 +63,7 @@ end
 
 ###############################################
 
-# Release1.2 - update with a /great_job route that can take a person's name as a query parameter (not a route parameter) and say "Good job, [person's name]!". If the query parameter is not present, the route simply says "Good job!"
+# Release0.2 - update with a /great_job route that can take a person's name as a query parameter (not a route parameter) and say "Good job, [person's name]!". If the query parameter is not present, the route simply says "Good job!"
 
 
 get '/great_job' do
@@ -78,7 +79,7 @@ end
 # http://localhost:4567/great_job?name=Forrest
 ###############################################
 
-# # Release1.3 - update with aroute that uses route parameters to add two numbers and respond with the result. The data types are tricky here -- when will the data need to be (or arrive as) a string?
+# # Release0.3 - update with aroute that uses route parameters to add two numbers and respond with the result. The data types are tricky here -- when will the data need to be (or arrive as) a string?
 
 # get '/sum' do
 #   "Hello World"
@@ -94,7 +95,7 @@ end
 # http://localhost:4567/sum/10/9
 ##############################################
 
-# Release1.4 - Optional Bonus: Make a route that allows the user to search the database in some way -- maybe for students who have a certain first name, or some other attribute. If you like, you can simply modify the home page to take a query parameter, and filter the students displayed if a query parameter is present.
+# Release0.4 - Optional Bonus: Make a route that allows the user to search the database in some way -- maybe for students who have a certain first name, or some other attribute. If you like, you can simply modify the home page to take a query parameter, and filter the students displayed if a query parameter is present.
 
 get '/first_name/:name' do
   first_name = db.execute("SELECT * FROM students WHERE name=?", [params[:name]])
@@ -118,3 +119,20 @@ end
 #URL:
 #
 ##############################################
+# RELEASE 1
+
+# Release1.1) Is Sinatra the only web app library in Ruby? What are some others?
+
+# ANSWR: Ruby on Rails (RoR), Merb, Nitro, and Camping are other web app libraries that can be used with Ruby.
+
+# Release1.2) Are SQLite and the sqlite3 gem your only options for using a database with Sinatra? What are some others?
+
+# ANSWR: MySQL, PostgreSQL, MongoDB, and Heroku.
+
+# Release1.3) What is meant by the term web stack?
+
+# ANSWR: Web Stack - the minimum collection of software need for web developement, which typically include:
+# Operating System (OS)
+# Programming Language (Ruby)
+# Database Software (SQL)
+# Web Server (Sinatra)
