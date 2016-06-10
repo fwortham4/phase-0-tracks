@@ -45,7 +45,8 @@ get '/students/:id' do
   student.to_s
 end
 
-###############################################
+
+##############################################
 # 9.4 Building a Web Application in Ruby
 # by Forrest Wortham
 
@@ -89,4 +90,31 @@ get '/sum/:num1/:num2' do
   sum = num1 + num2
   "#{num1} plus #{num2} equals #{sum}"
 end
-###############################################
+#URL:
+# http://localhost:4567/sum/10/9
+##############################################
+
+# Release1.4 - Optional Bonus: Make a route that allows the user to search the database in some way -- maybe for students who have a certain first name, or some other attribute. If you like, you can simply modify the home page to take a query parameter, and filter the students displayed if a query parameter is present.
+
+get '/first_name/:name' do
+  first_name = db.execute("SELECT * FROM students WHERE name=?", [params[:name]])
+  # Problem w/ name = params[:name].to_s
+  name = params[:name].to_s
+  dbname = params[:name].splice(" ")
+  prefix = dbname[0]
+  first_name = dbname[1]
+  last_name = dbname[2]
+
+
+full_name = ""
+  students.each do |student|
+    full_name << "prefix: #{prefix}<br>"
+    full_name << "First Name: #{first_name}<br>"
+    full_name << "Last Name: #{last_name}<br><br>"
+  end
+  full_name
+end
+
+#URL:
+#
+##############################################
