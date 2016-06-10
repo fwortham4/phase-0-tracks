@@ -49,7 +49,7 @@ end
 # 9.4 Building a Web Application in Ruby
 # by Forrest Wortham
 
-# Release1 - update with a "/contact" route that displays an address (you can make up the address).
+# Release1.1 - update with a "/contact" route that displays an address (you can make up the address).
 
 get '/contact/:address' do
   address = params[:address]
@@ -61,7 +61,7 @@ end
 
 ###############################################
 
-# Release1 - update with a /great_job route that can take a person's name as a query parameter (not a route parameter) and say "Good job, [person's name]!". If the query parameter is not present, the route simply says "Good job!"
+# Release1.2 - update with a /great_job route that can take a person's name as a query parameter (not a route parameter) and say "Good job, [person's name]!". If the query parameter is not present, the route simply says "Good job!"
 
 
 get '/great_job' do
@@ -77,7 +77,16 @@ end
 # http://localhost:4567/great_job?name=Forrest
 ###############################################
 
+# # Release1.3 - update with aroute that uses route parameters to add two numbers and respond with the result. The data types are tricky here -- when will the data need to be (or arrive as) a string?
 
+# get '/sum' do
+#   "Hello World"
+# end
 
-
-
+get '/sum/:num1/:num2' do
+  num1 = params[:num1].to_i
+  num2 = params[:num2].to_i
+  sum = num1 + num2
+  "#{num1} plus #{num2} equals #{sum}"
+end
+###############################################
