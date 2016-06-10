@@ -44,3 +44,40 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+###############################################
+# 9.4 Building a Web Application in Ruby
+# by Forrest Wortham
+
+# Release1 - update with a "/contact" route that displays an address (you can make up the address).
+
+get '/contact/:address' do
+  address = params[:address]
+  "The address is at #{address}"
+end
+
+# URL:
+# http://localhost:4567/contact/1234%20Road%20St.%20New%20York,%20NY
+
+###############################################
+
+# Release1 - update with a /great_job route that can take a person's name as a query parameter (not a route parameter) and say "Good job, [person's name]!". If the query parameter is not present, the route simply says "Good job!"
+
+
+get '/great_job' do
+  name = params[:name]
+  if name
+  "Good job, #{params[:name]}!"
+  else
+    "Good job!"
+  end
+end
+
+# URL:
+# http://localhost:4567/great_job?name=Forrest
+###############################################
+
+
+
+
+
